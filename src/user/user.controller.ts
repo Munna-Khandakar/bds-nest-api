@@ -15,8 +15,9 @@ import { UpdateUserDto } from './dto/update-user.dto';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post()
+  @Post('/register')
   register(@Body() createUserDto: CreateUserDto) {
+    console.log('register', createUserDto);
     return this.userService.register(createUserDto);
   }
 
