@@ -1,4 +1,5 @@
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { UserRole } from '../../enums/UserRole';
 
 export class CreateUserDto {
   @IsString()
@@ -13,7 +14,7 @@ export class CreateUserDto {
   @IsString()
   readonly password: string;
 
-  @IsString()
+  @IsEnum(UserRole)
   @IsNotEmpty()
-  readonly role: string;
+  readonly role: UserRole;
 }
