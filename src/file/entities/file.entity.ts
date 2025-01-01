@@ -10,6 +10,8 @@ export class File {
   currentLocation: number;
   @Prop({ required: true, type: String })
   status: string;
+  @Prop({ type: [String] })
+  workflow: [string];
 }
 
 export const FileSchema = SchemaFactory.createForClass(File);

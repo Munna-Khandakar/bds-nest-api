@@ -4,9 +4,10 @@ import { UserModule } from './user/user.module';
 import { APP_FILTER } from '@nestjs/core';
 import { CustomExceptionFilter } from './filters/custom-exception.filter';
 import { FileModule } from './file/file.module';
+import { WorkflowModule } from './workflow/workflow.module';
 
 @Module({
-  imports: [DatabaseModule, UserModule, FileModule],
+  imports: [DatabaseModule, UserModule, FileModule, WorkflowModule],
   controllers: [],
   providers: [
     {
