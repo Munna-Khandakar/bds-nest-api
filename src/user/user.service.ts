@@ -32,7 +32,7 @@ export class UserService {
     return await this.userModel.find().exec();
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     const user = await this.userModel.findById(id).exec();
 
     if (!user) {
@@ -46,7 +46,7 @@ export class UserService {
     return await this.userModel.find({ phone }).exec();
   }
 
-  async update(id: number, updateUserDto: UpdateUserDto) {
+  async update(id: string, updateUserDto: UpdateUserDto) {
     const updatedUser = await this.userModel
       .findByIdAndUpdate(id, updateUserDto, { new: true })
       .exec();
@@ -58,7 +58,7 @@ export class UserService {
     return updatedUser;
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     const user = await this.userModel.findByIdAndDelete(id).exec();
 
     if (!user) {
