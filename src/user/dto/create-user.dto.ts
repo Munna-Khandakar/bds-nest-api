@@ -17,4 +17,8 @@ export class CreateUserDto {
   @IsEnum(UserRole)
   @IsNotEmpty()
   readonly role: UserRole;
+
+  @IsString()
+  @IsNotEmpty()
+  readonly department: string;
 }
