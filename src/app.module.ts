@@ -5,9 +5,10 @@ import { APP_FILTER } from '@nestjs/core';
 import { CustomExceptionFilter } from './filters/custom-exception.filter';
 import { FileModule } from './file/file.module';
 import { WorkflowModule } from './workflow/workflow.module';
+import { RoleModule } from './role/role.module';
 
 @Module({
-  imports: [DatabaseModule, UserModule, FileModule, WorkflowModule],
+  imports: [DatabaseModule, UserModule, FileModule, WorkflowModule, RoleModule],
   controllers: [],
   providers: [
     {
