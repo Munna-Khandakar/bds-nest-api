@@ -14,7 +14,7 @@ export class UserService {
 
   async register(createUserDto: CreateUserDto) {
     const hashedPassword = await bcrypt.hash(
-      createUserDto.password || createUserDto.phone,
+      createUserDto.password || createUserDto.email,
       10,
     );
 
@@ -25,7 +25,7 @@ export class UserService {
   }
 
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user' + createUserDto;
+    return createUserDto;
   }
 
   async findAll() {

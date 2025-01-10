@@ -8,7 +8,7 @@ export class CreateUserDto {
 
   @IsString()
   @IsNotEmpty()
-  readonly phone: string;
+  readonly email: string;
 
   @IsOptional()
   @IsString()
