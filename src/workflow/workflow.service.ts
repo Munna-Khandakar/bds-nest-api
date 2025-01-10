@@ -12,24 +12,24 @@ export class WorkflowService {
   ) {}
 
   async create(createWorkflowDto: CreateWorkflowDto) {
-    return this.workFlowModel.create(createWorkflowDto);
+    return await this.workFlowModel.create(createWorkflowDto);
   }
 
   async findAll() {
-    return this.workFlowModel.find().exec();
+    return await this.workFlowModel.find().exec();
   }
 
   async findOne(id: string) {
-    return this.workFlowModel.findById(id).exec;
+    return await this.workFlowModel.findById(id).exec();
   }
 
   async update(id: string, updateWorkflowDto: UpdateWorkflowDto) {
-    return this.workFlowModel
+    return await this.workFlowModel
       .findByIdAndUpdate(id, updateWorkflowDto, { new: true })
       .exec();
   }
 
   async remove(id: string) {
-    return this.workFlowModel.findByIdAndDelete(id).exec();
+    return await this.workFlowModel.findByIdAndDelete(id).exec();
   }
 }

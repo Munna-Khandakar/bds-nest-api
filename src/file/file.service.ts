@@ -12,24 +12,24 @@ export class FileService {
   ) {}
 
   async create(createFileDto: CreateFileDto) {
-    return this.fileModel.create(createFileDto);
+    return await this.fileModel.create(createFileDto);
   }
 
   async findAll() {
-    return this.fileModel.find().exec();
+    return await this.fileModel.find().exec();
   }
 
   async findOne(id: string) {
-    return this.fileModel.findById(id).exec();
+    return await this.fileModel.findById(id).exec();
   }
 
   async update(id: string, updateFileDto: UpdateFileDto) {
-    return this.fileModel
+    return await this.fileModel
       .findByIdAndUpdate(id, updateFileDto, { new: true })
       .exec();
   }
 
   async remove(id: string) {
-    return this.fileModel.findByIdAndDelete(id).exec();
+    return await this.fileModel.findByIdAndDelete(id).exec();
   }
 }

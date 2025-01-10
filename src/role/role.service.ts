@@ -12,24 +12,24 @@ export class RoleService {
   ) {}
 
   async create(createRoleDto: CreateRoleDto) {
-    return this.roleModel.create(createRoleDto);
+    return await this.roleModel.create(createRoleDto);
   }
 
   async findAll() {
-    return this.roleModel.find().exec();
+    return await this.roleModel.find().exec();
   }
 
   async findOne(id: string) {
-    return this.roleModel.findById(id).exec;
+    return await this.roleModel.findById(id).exec();
   }
 
   async update(id: string, updateRoleDto: UpdateRoleDto) {
-    return this.roleModel
+    return await this.roleModel
       .findByIdAndUpdate(id, updateRoleDto, { new: true })
       .exec();
   }
 
   async remove(id: string) {
-    return this.roleModel.findByIdAndDelete(id).exec();
+    return await this.roleModel.findByIdAndDelete(id).exec();
   }
 }
