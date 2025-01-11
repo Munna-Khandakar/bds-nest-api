@@ -8,6 +8,8 @@ export class Role {
   name: string;
   @Prop({ type: String })
   reportsTo: string;
+  @Prop({ type: [String] })
+  permissions: string[];
 }
 
 export const RoleSchema = SchemaFactory.createForClass(Role);
