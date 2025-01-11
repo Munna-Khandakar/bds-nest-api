@@ -1,4 +1,28 @@
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  IsBoolean,
+  IsNumber,
+  IsArray,
+} from 'class-validator';
+
+export class StepDto {
+  @IsString()
+  department: string;
+
+  @IsString()
+  subDepartment: string;
+
+  @IsNumber()
+  timeLimit: number;
+
+  @IsBoolean()
+  requiredApproval: boolean;
+
+  @IsBoolean()
+  parallelProcessing: boolean;
+}
 
 export class CreateWorkflowDto {
   @IsString()
@@ -8,4 +32,7 @@ export class CreateWorkflowDto {
   @IsString()
   @IsOptional()
   readonly description: string;
+
+  @IsArray()
+  steps: StepDto[];
 }
