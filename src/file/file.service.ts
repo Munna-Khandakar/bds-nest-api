@@ -16,7 +16,7 @@ export class FileService {
   }
 
   async findAll() {
-    return await this.fileModel.find().populate('departments').exec();
+    return await this.fileModel.find().populate('department').exec();
   }
 
   async findOne(id: string) {
