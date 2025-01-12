@@ -32,4 +32,8 @@ export class CreateFileDto {
   @IsOptional()
   @IsString()
   applicantName: string;
+
+  @IsOptional()
+  @IsString()
+  priority: string;
 }

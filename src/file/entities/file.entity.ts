@@ -20,6 +20,8 @@ export class File {
   nid: string;
   @Prop({ type: [String] })
   workflow: [string];
+  @Prop({ type: String })
+  priority: string;
 }
 
 export const FileSchema = SchemaFactory.createForClass(File);
