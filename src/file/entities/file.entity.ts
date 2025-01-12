@@ -5,11 +5,19 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 })
 export class File {
   @Prop({ required: true, type: String })
-  name: string;
+  title: string;
   @Prop({ required: true, type: String })
-  currentLocation: number;
-  @Prop({ required: true, type: String })
+  applicantName: string;
+  @Prop({ type: String })
+  description: number;
+  @Prop({ type: String })
+  currentLocation: string;
+  @Prop({ type: String })
+  department: string;
+  @Prop({ type: String })
   status: string;
+  @Prop({ type: String })
+  nid: string;
   @Prop({ type: [String] })
   workflow: [string];
 }

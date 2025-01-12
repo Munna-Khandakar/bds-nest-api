@@ -1,15 +1,35 @@
 import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateFileDto {
-  @IsString()
   @IsNotEmpty()
-  readonly name: string;
-
   @IsString()
-  @IsNotEmpty()
-  readonly currentLocation: string;
+  title: string;
 
   @IsOptional()
   @IsString()
-  readonly status: string;
+  description: string;
+
+  @IsNotEmpty()
+  @IsString()
+  currentLocation: string;
+
+  @IsNotEmpty()
+  @IsString()
+  department: string;
+
+  @IsOptional()
+  @IsString()
+  status: string;
+
+  @IsNotEmpty()
+  @IsString()
+  nid: string;
+
+  @IsOptional()
+  @IsString({ each: true })
+  workflow: string[];
+
+  @IsOptional()
+  @IsString()
+  applicantName: string;
 }
